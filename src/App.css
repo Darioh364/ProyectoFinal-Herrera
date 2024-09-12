@@ -45,15 +45,15 @@
 
 /*Estilos para la primer Pre-entrega*/
 .app{
-  background-color: aqua;
+  background-color: rgb(51, 57, 57);
 }
 
 .NavBar {
-  background-color: red;
+  background-color: rgb(179, 179, 187);
 }
 
 .cart_Widget{
-  background-color: violet;
+  background-color: rgb(238, 189, 238);
 }
 
 .carrito {
@@ -61,10 +61,87 @@
 }
 
 .item_List_Container{
-  background-color: green;
-  height: 70vh;
+  background-color: rgb(255, 255, 255);
 }
 
 .cuerpo{
   display: block;
+}
+
+/* ----------------------------------------------------------------Estilos generales para las tarjetas-------------------------------------------- */
+.CardItem {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 26vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CardItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezado de la tarjeta */
+.Header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.ItemHeader {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Información del producto */
+.Info, .Descripcion {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Sección de categoría */
+.Categoria {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Pie de la tarjeta */
+.ItemFooter {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+  margin-top: 8px;
+}
+
+/* Botón de acción */
+.Option {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.Option:hover {
+  background-color: #0056b3;
+}
+
+.ListGroup {
+  padding-left: 40px;
+}
+
+.ImgCard{
+  width: 200px;
 }
