@@ -35,13 +35,6 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 
 /*Estilos para la primer Pre-entrega*/
 .app{
@@ -80,6 +73,10 @@
   justify-content: space-between;
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CardItemDetail{
+  width: auto;
 }
 
 .CardItem:hover {

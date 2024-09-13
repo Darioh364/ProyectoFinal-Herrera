@@ -1,17 +1,17 @@
 import { useState } from "react"
 
 function ItemCount({stock, initial, onAdd}) {
-    const [quantity, setQuantity] = useState(initial)
+    const [cantidad, setCantidad] = useState(initial)
 
     const incrementar = () => {
-        if (quantity < stock){
-            setQuantity(quantity + 1)
+        if (cantidad < stock){
+            setCantidad(cantidad + 1)
         }
     }
 
     const decrementar = () => {
-        if (quantity > 1){
-            setQuantity(quantity - 1)
+        if (cantidad > 1){
+            setCantidad(cantidad - 1)
         }
     }
 
@@ -19,11 +19,11 @@ function ItemCount({stock, initial, onAdd}) {
         <div>
             <div className="d-flex">
                 <button onClick={incrementar} className="m-4"> + </button>
-                <h4 className="p-4">{quantity}</h4>
+                <h4 className="p-4">{cantidad}</h4>
                 <button onClick={decrementar} className="m-4"> - </button>
             </div>
             <div>
-                <button onClick={()=> onAdd(quantity)} disabled={!stock}>Agregar al carrito</button>
+                <button onClick={()=> onAdd(cantidad)} disabled={!stock}>Agregar al carrito</button>
             </div>
 
         </div>

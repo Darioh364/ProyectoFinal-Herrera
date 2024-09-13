@@ -7,7 +7,7 @@ function NavBar() {
       <div className="NavBar p-2">
         <div className="row">
           <div className="col-3 d-flex justify-content-start mt-3">
-            <h5>A tu ritmo</h5>
+          <Link to={`/`}> A tu ritmo </Link>
           </div>
           <div className="col-9">
             <div className="d-flex justify-content-end text-center">

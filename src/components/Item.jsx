@@ -20,7 +20,7 @@ function Item ({id, nombre, precio, stock, img}) {
                 </p>
             </section>
             <footer className="ItemFooter">
-                <Link to={`/item/${id}`}> Ver detail </Link>
+                <Link to={`/item/${id}`}> Ver detalle </Link>
             </footer>
         </article>
     )
