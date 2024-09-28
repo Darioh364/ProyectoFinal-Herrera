@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
-function Item ({id, nombre, precio, stock, img}) {
-    return(
+function Item({ id, nombre, precio, imagen, categoria }) {
+    return (
         <article className="CardItem m-1">
             <header className="Header">
                 <h2 className="ItemHeader">
@@ -9,14 +9,14 @@ function Item ({id, nombre, precio, stock, img}) {
                 </h2>
             </header>
             <div className="d-flex justify-content-center align-items-center">
-            <img src= {img} alt="" className="ImgCard" />
+                <img src={imagen} alt="" className="ImgCard" />
             </div>
             <section>
                 <p className="Info">
                     Precio: ${precio}
                 </p>
                 <p className="Info">
-                    Stock disponible: {stock}
+                    Categoria: ${categoria}
                 </p>
             </section>
             <footer className="ItemFooter">

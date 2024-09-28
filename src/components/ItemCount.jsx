@@ -1,7 +1,11 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { cartContext } from "../context/cartContext"
+import { Link } from "react-router-dom"
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({stock, initial, item}) {
     const [cantidad, setCantidad] = useState(initial)
+
+    const {añadirCarrito} = useContext(cartContext)
 
     const incrementar = () => {
         if (cantidad < stock){
@@ -15,6 +19,8 @@ function ItemCount({stock, initial, onAdd}) {
         }
     }
 
+    const manejoAñadirCarrito = () => añadirCarrito([item, cantidad])
+
     return (
         <div>
             <div className="d-flex">
@@ -23,7 +29,8 @@ function ItemCount({stock, initial, onAdd}) {
                 <button onClick={decrementar} className="m-4"> - </button>
             </div>
             <div>
-                <button onClick={()=> onAdd(cantidad)} disabled={!stock}>Agregar al carrito</button>
+                <button onClick={()=> manejoAñadirCarrito(cantidad)} disabled={!stock}>Agregar al carrito</button>
+                <Link to={`/carrito`}> Ver carrito </Link>
             </div>
 
         </div>

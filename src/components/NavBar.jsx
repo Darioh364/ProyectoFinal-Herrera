@@ -11,8 +11,8 @@ function NavBar() {
           </div>
           <div className="col-9">
             <div className="d-flex justify-content-end text-center">
-              <NavLink to={'/categoria/Teclado'} className={'mx-2 mt-3'}>Teclados</NavLink>
-              <NavLink to={'/categoria/Batería'} className={'mx-2 mt-3'}>Baterias</NavLink>
+              <NavLink to={'/categoria/Teclados'} className={'mx-2 mt-3'}>Teclados</NavLink>
+              <NavLink to={'/categoria/Baterias'} className={'mx-2 mt-3'}>Baterias</NavLink>
               <NavLink to={'/categoria/Guitarra'} className={'mx-2 mt-3'}>Guitarras</NavLink>
               <NavLink to={'/categoria/Viento'} className={'mx-2 mt-3'}>Vientos</NavLink>
               <CartWidget />

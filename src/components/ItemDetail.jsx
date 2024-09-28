@@ -1,6 +1,6 @@
 import ItemCount from './ItemCount'
 
-function ItemDetail({ id, nombre, precio, categoria, stock, descripcion, img }) {
+function ItemDetail({nombre, precio, categoria, stock, descripcion, img }) {
     return (
         <article className="CardItem CardItemDetail m-1">
             <header className="Header">
@@ -28,7 +28,7 @@ function ItemDetail({ id, nombre, precio, categoria, stock, descripcion, img }) 
                         </p>
                     </section>
                     <footer className="ItemFooter">
-                        <ItemCount stock={10} initial={1} onAdd={(cantidad) => console.log('Cantidad agregada ', cantidad)} />
+                        <ItemCount item={[nombre, precio,]} stock={10} initial={1}/>
                     </footer>
                 </div>
             </div>

@@ -1,22 +1,29 @@
-import { useState, useEffect } from "react"
-import { obtenerProducto, obtenerProductoCategoria } from '../catalogoProductos'
+import { useState, useEffect} from "react"
+// import { obtenerProducto, obtenerProductoCategoria } from '../catalogoProductos'
 import ItemList from './ItemList'
 import { useParams } from "react-router-dom"
+import { traerProductos, traerProductosPorCategoria } from "../firebase/db"
 
 function ItemListContainer({}){
     const[productos, setProductos] = useState([])
-
     const { categoriaId } = useParams()
 
+
     useEffect(() => {
-        const asyncFunc = categoriaId ? obtenerProductoCategoria : obtenerProducto
-        asyncFunc(categoriaId)
-        .then(res => {
-            setProductos(res)
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+        //const asyncFunc = categoriaId ? obtenerProductoCategoria : obtenerProducto
+        //asyncFunc(categoriaId)
+        //.then(res => {
+         //   setProductos(res)
+        //})
+        //.catch(error =>{
+          //  console.log(error)
+        //})
+
+        traerProductos(setProductos)
+        traerProductosPorCategoria(categoriaId)
+
+        categoriaId ? traerProductosPorCategoria(categoriaId, setProductos) : traerProductos(setProductos)
+
     },[categoriaId])
 
 
