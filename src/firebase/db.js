@@ -25,3 +25,15 @@ export const traerProductosPorCategoria = async (categoria, setProductos) => {
     });
     setProductos(productos)
 }
+
+export const traerProductosPorId = async (itemId, setProducto) =>{
+    const productosRef = collection(db, "Productos")
+    const q = query(productosRef, where("id", "==", itemId))
+    const querySnapshot = await getDocs(q);
+    const productosId = []
+
+    querySnapshot.forEach((doc) => {
+        productosId.push(doc.data())
+    });
+    setProducto(productosId[0]);
+}

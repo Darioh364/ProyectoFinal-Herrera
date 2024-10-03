@@ -10,25 +10,31 @@ function Carrito() {
         return <p>El carrito está vacío.</p>;
     }
 
-
-
     return (
-        <div className="carrito">
-            <h2>Carrito</h2>
-            <ul className="carrito">
-                {/* Recorremos el carrito y mostramos los productos */}
+        <div className="carrito-container">
+            <h2 className="carrito-titulo">Carrito de Compras</h2>
+            <ul className="carrito-lista">
                 {cart.map((item, index) => {
-                    if (Array.isArray(item) && item.length > 1) {
-                        const producto = item[0]; // Asumiendo que el nombre o identificador del producto está en la primera posición
-                        const cantidad = item[1]; // Asumiendo que la cantidad está en la segunda posición
+                        const producto = item.item; // Nombre del producto
+                        const cantidad = item.cantidad; // Cantidad del producto
+                        const imagen = item.imagen;   // URL de la imagen del producto
+                        const precio = item.precio;
                         return (
-                            <li key={index}>
-                                Producto: {producto}, Cantidad: {cantidad}
-                            </li>
+                            <li key={index} className="carrito-item">
+                            <img src={imagen} alt={producto} className="carrito-imagen" />
+                            <div className="carrito-detalles">
+                                <span className="carrito-producto">{producto}</span>
+                                <span className="carrito-cantidad">Cantidad: {cantidad}</span>
+                                <span className="carrito-Precio">Precio: {precio}</span>
+                            </div>
+                        </li>
                         );
-                    }
                 })}
             </ul>
+            <div className="carrito-footer">
+                <button className="btn-vaciar">Vaciar Carrito</button>
+                <button className="btn-comprar">Finalizar Compra</button>
+            </div>
         </div>
     );
 }

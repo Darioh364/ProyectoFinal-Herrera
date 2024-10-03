@@ -36,7 +36,35 @@
 }
 
 
-/*Estilos para la primer Pre-entrega*/
+/*------------------------------------------------------------Estilos para el CartTwidget------------------------------------------------------------*/
+.cart_Widget {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0; /* Fondo gris claro para mejorar la legibilidad */
+  border-radius: 30px; /* Bordes redondeados */
+  padding: 5px 10px; /* Espaciado interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: transform 0.2s; /* Transición al hacer hover */
+}
+
+.cart_Widget:hover {
+  transform: scale(1.05); /* Aumenta ligeramente al hacer hover */
+}
+
+.carrito_Img {
+  width: 40; /* Tamaño para la imagen del carrito */
+  height: auto; /* Mantener proporciones */
+}
+
+
+
+.cantidad{
+  color: #222;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 .app{
   background-color: rgb(51, 57, 57);
 }
@@ -45,9 +73,6 @@
   background-color: rgb(179, 179, 187);
 }
 
-.cart_Widget{
-  background-color: rgb(238, 189, 238);
-}
 
 .carrito_Img {
   height: 30px;
@@ -60,90 +85,350 @@
 .cuerpo{
   display: block;
 }
+/*----------------------------------------------------------------Estilos para el navbar------------------------------------------------------------*/
+.NavBar {
+  background-color: #343a40; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.NavBar a {
+  text-decoration: none; /* Sin subrayado */
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.NavBar a:hover {
+  color: #ff5722; /* Color vibrante al pasar el mouse */
+}
+
+.NavBar .row {
+  align-items: center; /* Centrar verticalmente el contenido */
+}
+
+.NavBar .col-3 {
+  display: flex;
+  justify-content: flex-start; /* Alinear el logo a la izquierda */
+}
+
+.NavBar .col-9 {
+  display: flex;
+  justify-content: flex-end; /* Alinear los enlaces a la derecha */
+}
+
+.NavLink {
+  margin: 0 15px; /* Espaciado entre enlaces */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición para el fondo */
+}
+
+.NavLink:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil al pasar el mouse */
+}
 
 /* ----------------------------------------------------------------Estilos generales para las tarjetas-------------------------------------------- */
 .CardItem {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  width: 26vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #fff;
+  flex: 1 1 calc(33.33% - 20px); /* Asegura que se ajusten tres tarjetas en una fila */
+  margin: 10px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.CardItemDetail{
-  width: auto;
+.CardItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.Header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.ItemHeader {
+  font-size: 20px; /* Ajustar tamaño de fuente */
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImgCard {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  border: 2px solid #eee;
+}
+
+.ImgCard:hover {
+  transform: scale(1.05);
+  border-color: #4CAF50;
+}
+
+section {
+  text-align: center;
+}
+
+.Info {
+  font-size: 14px; /* Ajustar tamaño de fuente */
+  color: #444;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.ItemFooter {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.ItemFooter a {
+  display: inline-block;
+  padding: 8px 15px; /* Ajustar padding para botones más pequeños */
+  font-size: 14px; /* Ajustar tamaño de fuente */
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5722; /* Color vibrante */
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(255, 87, 34, 0.3);
+}
+
+.ItemFooter a:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 87, 34, 0.5);
+}
+
+/* Asegúrate de que el contenedor de tarjetas use display: flex */
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan */
+  justify-content: space-between; /* Espacio uniforme entre tarjetas */
+}
+
+/*---------------------------------------------Estilos para las tarjetas en detalle------------------------------------------------------*/
+.CardItem {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .CardItem:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Encabezado de la tarjeta */
 .Header {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 8px;
-  margin-bottom: 8px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .ItemHeader {
-  font-size: 1.2rem;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.ImgCard {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ImgCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  flex-grow: 1;
+}
+
+.Info {
+  font-size: 18px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.Descripcion {
+  font-size: 16px;
+  color: #777;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.ItemFooter {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.ItemFooter .btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.ItemFooter .btn:hover {
+  background-color: #388E3C;
+  transform: translateY(-2px);
+}
+
+/*---------------------------------------------Estilos para el carrito------------------------------------------------------------*/
+.carrito-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.carrito-container:hover {
+  transform: scale(1.02);
+}
+
+.carrito-titulo {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #3e3e3e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.carrito-lista {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 2px solid #eee;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.carrito-item:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-imagen {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.carrito-imagen:hover {
+  transform: scale(1.05);
+  border-color: #4CAF50;
+}
+
+.carrito-detalles {
+  flex-grow: 1;
+  padding: 0 10px;
+}
+
+.carrito-producto {
+  font-size: 20px;
   font-weight: bold;
   color: #333;
 }
 
-/* Información del producto */
-.Info, .Descripcion {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 8px;
+.carrito-cantidad,
+.carrito-precio {
+  display: block;
+  color: #777;
+  margin-top: 5px;
 }
 
-/* Sección de categoría */
-.Categoria {
-  font-size: 0.9rem;
-  color: #888;
-}
-
-/* Pie de la tarjeta */
-.ItemFooter {
+.carrito-footer {
   display: flex;
-  justify-content: center;
-  padding-top: 8px;
-  border-top: 1px solid #eee;
-  margin-top: 8px;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-/* Botón de acción */
-.Option {
-  background-color: #007bff;
-  color: #fff;
+.btn-vaciar,
+.btn-comprar {
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
-.Option:hover {
-  background-color: #0056b3;
+.btn-vaciar {
+  background-color: #ff3d3d;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 61, 61, 0.3);
 }
 
-.ListGroup {
-  padding-left: 40px;
+.btn-vaciar:hover {
+  background-color: #ff1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 61, 61, 0.5);
 }
 
-.ImgCard{
-  width: 200px;
+.btn-comprar {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
 }
-/*---------------------------------------------Estilos para el carrito------------------------------------------------------------*/
 
-.carrito{
-  background-color: #fff;
+.btn-comprar:hover {
+  background-color: #388E3C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.5);
 }

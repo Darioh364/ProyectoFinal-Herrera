@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 
 function Item({ id, nombre, precio, imagen, categoria }) {
+    
+
     return (
         <article className="CardItem m-1">
             <header className="Header">
@@ -16,7 +18,7 @@ function Item({ id, nombre, precio, imagen, categoria }) {
                     Precio: ${precio}
                 </p>
                 <p className="Info">
-                    Categoria: ${categoria}
+                    Categoria: {categoria}
                 </p>
             </section>
             <footer className="ItemFooter">

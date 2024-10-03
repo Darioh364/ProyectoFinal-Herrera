@@ -1,6 +1,6 @@
 import ItemCount from './ItemCount'
 
-function ItemDetail({nombre, precio, categoria, stock, descripcion, img }) {
+function ItemDetail({nombre, precio, categoria, descripcion, imagen }) {
     return (
         <article className="CardItem CardItemDetail m-1">
             <header className="Header">
@@ -10,25 +10,22 @@ function ItemDetail({nombre, precio, categoria, stock, descripcion, img }) {
             </header>
             <div className='d-flex'>
                 <div>
-                    <img src={img} className="ImgCard" alt="" />
+                    <img src={imagen} className="ImgCard" alt="" />
                 </div>
                 <div>
                     <section>
                         <p className="Info">
                             Precio: ${precio}
                         </p>
-                        <p className="Descripcion">
+                        <p className="Info">
                             Descripcion: {descripcion}
                         </p>
                         <p className="Info">
-                            Stock disponible: {stock}
-                        </p>
-                        <p>
                             Categoria: {categoria}
                         </p>
                     </section>
                     <footer className="ItemFooter">
-                        <ItemCount item={[nombre, precio,]} stock={10} initial={1}/>
+                        <ItemCount item={nombre} imagen={imagen} precio={precio} initial={1}/>
                     </footer>
                 </div>
             </div>
