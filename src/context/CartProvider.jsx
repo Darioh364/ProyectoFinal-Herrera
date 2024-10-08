@@ -1,45 +1,48 @@
-import { useState } from "react"
-import { cartContext } from "./cartContext"
+import { useState } from "react";
+import { cartContext } from "./cartContext";
 
 function CartProvider({ children }) {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
 
     const añadirCarrito = (item) => {
-        // Verificar si el carrito está vacío
+        // Lógica actual para añadir productos al carrito
         if (cart.length === 0) {
             setCart([item]);
         } else {
-            // Verificar si el item ya está en el carrito
             const existe = cart.some(cartItem => cartItem.item === item.item);
-            
             if (!existe) {
-                // Si no existe, añadir el nuevo item al carrito
                 setCart([...cart, item]);
             } else {
-                // Si ya existe, actualizar la cantidad
                 const nuevoCarrito = cart.map(cartItem => {
                     if (cartItem.item === item.item) {
-                        // Asegúrate de que cartItem tenga la propiedad 'cantidad'
                         return {
                             ...cartItem,
-                            cantidad: cartItem.cantidad + item.cantidad // Sumar la nueva cantidad a la existente
+                            cantidad: cartItem.cantidad + item.cantidad
                         };
                     }
-                    return cartItem; // Retornar el item sin cambios
+                    return cartItem;
                 });
                 setCart(nuevoCarrito);
             }
         }
     };
-    
-    
-    console.log("Contenido del carrito:", cart);
-    
+
+    // Función para vaciar el carrito
+    const borrarCarrito = () => {
+        setCart([]); // Esto vacía el carrito
+    };
+
+    const eliminarItem = (itemAEliminar) => {
+        console.log('Estoy tratando de liminar el item')
+        const nuevoCarrito = cart.filter(cartItem => cartItem.item !== itemAEliminar);
+        setCart(nuevoCarrito); // Actualiza el carrito con el item eliminado
+    }
+
     return (
-        <cartContext.Provider value={{ cart, añadirCarrito }}>
+        <cartContext.Provider value={{ cart, añadirCarrito, borrarCarrito, eliminarItem }}>
             {children}
         </cartContext.Provider>
-    )
+    );
 }
 
-export default CartProvider
+export default CartProvider;
