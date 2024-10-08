@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where, addDoc } from "firebase/firestore";
 import { app } from "./config"
 
 const db = getFirestore(app)
@@ -36,4 +36,14 @@ export const traerProductosPorId = async (itemId, setProducto) =>{
         productosId.push(doc.data())
     });
     setProducto(productosId[0]);
+}
+
+export const crearOrden = async (orden) => {
+    try {
+        const docRef = await addDoc(collection(db, "ordenCompra"), orden);
+        console.log("Document written with ID: ", docRef.id);
+        return docRef.id
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
 }

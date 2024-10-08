@@ -437,7 +437,7 @@ section {
 /*---------------------------------*/
 /* Estilos del contenedor del CheckOut */
 .checkout-container {
-  max-width: 400px;
+  max-width: 1000px;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #ddd;

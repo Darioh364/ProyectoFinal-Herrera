@@ -15,7 +15,7 @@ function Carrito() {
 
     return (
         <div className="carrito-container">
-            <h2 className="carrito-titulo">Carrito de Compras</h2>
+            <h2 className="carrito-titulo">Carrito</h2>
             <ul className="carrito-lista">
                 {cart.map((item, index) => {
                     const producto = item.item; // Nombre del producto
