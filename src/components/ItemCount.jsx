@@ -4,13 +4,16 @@ import { Link } from "react-router-dom"
 import Swal from 'sweetalert2';
 
 
-function ItemCount({ initial, item, imagen, precio, id }) {
+function ItemCount({ initial, item, imagen, precio, id, stock}) {
     const [cantidad, setCantidad] = useState(initial)
 
     const { añadirCarrito } = useContext(cartContext)
+  
 
     const incrementar = () => {
-        setCantidad(cantidad + 1)
+        if (cantidad < stock){
+            setCantidad(cantidad + 1)
+        }
     }
 
     const decrementar = () => {
@@ -34,7 +37,7 @@ function ItemCount({ initial, item, imagen, precio, id }) {
             title: '¡Producto añadido!',
             text: 'El producto fue agregado exitosamente al carrito.',
             showConfirmButton: false,
-            timer: 2500
+            timer: 1500
         });
     };
 

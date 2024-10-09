@@ -9,13 +9,6 @@ function ItemDetailContainer (){
     const {itemId} = useParams()  //Aca tengo el ID
 
     useEffect(() => {
-        //obtenerProductoId(itemId)
-        //.then(res => {
-          //  setProducto(res)
-        //})
-        //.catch(error => {
-          //  console.log(error)
-        //})
         traerProductosPorId(itemId, setProducto)
     },[itemId])
 

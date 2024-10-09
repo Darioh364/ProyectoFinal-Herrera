@@ -1,6 +1,6 @@
 import ItemCount from './ItemCount'
 
-function ItemDetail({nombre, precio, categoria, descripcion, imagen, id }) {
+function ItemDetail({nombre, precio, categoria, descripcion, imagen, id, stock }) {
     return (
         <article className="CardItem CardItemDetail m-1">
             <header className="Header">
@@ -23,9 +23,13 @@ function ItemDetail({nombre, precio, categoria, descripcion, imagen, id }) {
                         <p className="Info">
                             Categoria: {categoria}
                         </p>
+                        <p className="Info">
+                            Stock: {stock}
+                        </p>
+
                     </section>
                     <footer className="ItemFooter">
-                        <ItemCount item={nombre} imagen={imagen} precio={precio} id={id} initial={1}/>
+                        <ItemCount item={nombre} imagen={imagen} precio={precio} id={id} stock={stock} initial={1}/>
                     </footer>
                 </div>
             </div>
