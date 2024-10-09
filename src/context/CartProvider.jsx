@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cartContext } from "./cartContext";
+import Swal from 'sweetalert2';
 
 function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
@@ -30,6 +31,12 @@ function CartProvider({ children }) {
     // Función para vaciar el carrito
     const borrarCarrito = () => {
         setCart([]); // Esto vacía el carrito
+        Swal.fire({
+            icon: "success",
+            title: '¡Se vacio el carrito con exito!',
+            showConfirmButton: false,
+            timer: 1500
+        });
     };
 
     const eliminarItem = (itemAEliminar) => {

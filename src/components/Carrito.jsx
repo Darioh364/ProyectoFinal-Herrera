@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { cartContext } from "../context/cartContext"
 import { Link } from "react-router-dom"
-
 function Carrito() {
 
     const { cart, borrarCarrito, eliminarItem } = useContext(cartContext)
@@ -15,8 +14,6 @@ function Carrito() {
             </div>
         )
     }
-
-    console.log(cart);
 
     return (
         <div className="carrito-container">

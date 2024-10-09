@@ -45,9 +45,6 @@ function CheckOut() {
         
     }
 
-
-
-
     return (
         <div className="checkout-container row">
             <div className="col-6">

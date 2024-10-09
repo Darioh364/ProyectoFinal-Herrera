@@ -4,23 +4,29 @@ import { Link } from "react-router-dom"
 import Swal from 'sweetalert2';
 
 
-function ItemCount({ initial, item, imagen, precio, id, stock}) {
+function ItemCount({ initial, item, imagen, precio, id, stock }) {
     const [cantidad, setCantidad] = useState(initial)
+    const [visible, setVisible] = useState(true);
 
-    const { añadirCarrito } = useContext(cartContext)
-  
+    const {añadirCarrito } = useContext(cartContext)
 
     const incrementar = () => {
-        if (cantidad < stock){
+        if (cantidad < stock) {
             setCantidad(cantidad + 1)
-        }
+        }else(
+            Swal.fire({
+                icon: "error",
+                title: '¡No hay mas stock !',
+                showConfirmButton: true,
+            })
+        )
     }
 
     const decrementar = () => {
         if (cantidad > 1) {
             setCantidad(cantidad - 1)
         }
-    }
+    } 
 
     const manejoAñadirCarrito = () => {
         const nuevoItem = {
@@ -39,7 +45,14 @@ function ItemCount({ initial, item, imagen, precio, id, stock}) {
             showConfirmButton: false,
             timer: 1500
         });
+        setVisible(false);  // Ocultar el componente después de agregar al carrito
     };
+
+    if (!visible) return (
+        <div>
+            <Link to={`/carrito`} className="mt-3"> Ver carrito </Link>
+        </div>
+    ) // Si `visible` es falso, renderiza solo la opcion de ver el carrito
 
 
     return (

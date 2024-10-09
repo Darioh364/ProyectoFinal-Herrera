@@ -10,8 +10,6 @@ function ItemListContainer({ }) {
     const { categoriaId } = useParams()
 
     useEffect(() => {
-
-
         traerProductos(setProductos)
         traerProductosPorCategoria(categoriaId)
 
