@@ -41,7 +41,6 @@ export const traerProductosPorId = async (itemId, setProducto) =>{
 export const crearOrden = async (orden) => {
     try {
         const docRef = await addDoc(collection(db, "ordenCompra"), orden);
-        console.log("Document written with ID: ", docRef.id);
         return docRef.id
       } catch (e) {
         console.error("Error adding document: ", e);

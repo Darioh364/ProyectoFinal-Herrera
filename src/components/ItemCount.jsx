@@ -1,18 +1,20 @@
 import { useState, useContext } from "react"
 import { cartContext } from "../context/cartContext"
 import { Link } from "react-router-dom"
+import Swal from 'sweetalert2';
 
-function ItemCount({initial, item, imagen, precio, id}) {
+
+function ItemCount({ initial, item, imagen, precio, id }) {
     const [cantidad, setCantidad] = useState(initial)
 
-    const {añadirCarrito} = useContext(cartContext)
+    const { añadirCarrito } = useContext(cartContext)
 
     const incrementar = () => {
-            setCantidad(cantidad + 1)
+        setCantidad(cantidad + 1)
     }
 
     const decrementar = () => {
-        if (cantidad > 1){
+        if (cantidad > 1) {
             setCantidad(cantidad - 1)
         }
     }
@@ -26,8 +28,16 @@ function ItemCount({initial, item, imagen, precio, id}) {
             id: id
         };
         añadirCarrito(nuevoItem);
+
+        Swal.fire({
+            icon: "success",
+            title: '¡Producto añadido!',
+            text: 'El producto fue agregado exitosamente al carrito.',
+            showConfirmButton: false,
+            timer: 2500
+        });
     };
-    
+
 
     return (
         <div>
@@ -37,7 +47,7 @@ function ItemCount({initial, item, imagen, precio, id}) {
                 <button onClick={decrementar} className="m-4"> - </button>
             </div>
             <div>
-                <button onClick={()=> manejoAñadirCarrito(cantidad)}>Agregar al carrito</button>
+                <button onClick={() => manejoAñadirCarrito(cantidad)}>Agregar al carrito</button>
                 <Link to={`/carrito`} className="mt-3"> Ver carrito </Link>
             </div>
 

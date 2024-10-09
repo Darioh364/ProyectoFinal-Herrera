@@ -1,15 +1,19 @@
 import { useContext } from "react"
 import { cartContext } from "../context/cartContext"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { crearOrden } from "../firebase/db"
 import { serverTimestamp } from "firebase/firestore"
+import Swal from 'sweetalert2';
+
 
 function CheckOut() {
 
-    const { cart } = useContext(cartContext)
+    const { cart, borrarCarrito } = useContext(cartContext)
+    const navega = useNavigate();
+
     let costoTotalCompra = 0
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         const nombre = e.target.nombre.value
@@ -25,7 +29,20 @@ function CheckOut() {
             total: costoTotalCompra
         }
 
-        crearOrden(orden)
+        const idOrden = await crearOrden(orden) // obtengo el id de la orden creada
+
+        const result = await Swal.fire({
+            title: '¡Se realizo la orden con exito!',
+            text: `El codigo de su compra es ${idOrden}`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
+        
+        if (result.isConfirmed) {
+            navega('/')
+            borrarCarrito()
+        }
+        
     }
 
 

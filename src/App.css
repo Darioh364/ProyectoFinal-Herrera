@@ -310,6 +310,9 @@ section {
 }
 
 /*---------------------------------------------Estilos para el carrito------------------------------------------------------------*/
+.carrito-vacio{
+  background-color: #ffffff;
+}
 .carrito-container {
   max-width: 600px;
   margin: 30px auto;
