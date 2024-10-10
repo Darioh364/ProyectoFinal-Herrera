@@ -17,8 +17,6 @@ function ItemListContainer({ }) {
 
     }, [categoriaId])
 
-
-
     return (
 
         <div className="item_List_Container p-2 m-4">

@@ -26,11 +26,11 @@ function Carrito() {
                     const precio = item.precio;
                     const id = item.id
                     return (
-                        <li key={index} className="carrito-item">
-                            <Link to={`/item/${id}`}>
+                        <li key={index} className="carrito-item row">
+                            <Link to={`/item/${id}`} className="col-12 col-md-4">
                                 <img src={imagen} alt={producto} className="carrito-imagen" />
                             </Link>
-                            <div className="carrito-detalles">
+                            <div className="carrito-detalles col-12 col-md-8">
                                 <span className="carrito-producto">{producto}</span>
                                 <span className="carrito-cantidad">Cantidad: {cantidad}</span>
                                 <span className="carrito-Precio">Precio: {precio}</span>
@@ -43,8 +43,8 @@ function Carrito() {
                 })}
             </ul>
             <div className="carrito-footer">
-                <button className="btn-vaciar" onClick={borrarCarrito}>Vaciar Carrito</button>
-                <Link to={`/checkout`} className="btn-comprar">Finalizar Compra</Link>
+                <button className="btn-vaciar " onClick={borrarCarrito}>Vaciar Carrito</button>
+                <Link to={`/checkout`} className="btn-comprar p-md-3 p-2 mt-4">Finalizar Compra</Link>
             </div>
         </div>
     );

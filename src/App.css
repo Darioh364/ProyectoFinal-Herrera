@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   padding: 2rem;
   text-align: center;
 }
@@ -10,6 +9,8 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
+
 
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -73,7 +74,6 @@
   background-color: rgb(179, 179, 187);
 }
 
-
 .carrito_Img {
   height: 30px;
 }
@@ -131,7 +131,6 @@
 
 /* ----------------------------------------------------------------Estilos generales para las tarjetas-------------------------------------------- */
 .CardItem {
-  flex: 1 1 calc(33.33% - 20px); /* Asegura que se ajusten tres tarjetas en una fila */
   margin: 10px;
   padding: 15px;
   background-color: #ffffff;
@@ -140,6 +139,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.ListGroup{
+  --bs-gutter-x: 0 !important;
 }
 
 .CardItem:hover {
@@ -403,7 +406,6 @@ section {
 
 .btn-vaciar,
 .btn-comprar {
-  padding: 12px 25px;
   font-size: 16px;
   border: none;
   border-radius: 50px;
@@ -411,6 +413,18 @@ section {
   font-weight: bold;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
+
+@media (max-width: 767px) {
+  .btn-comprar {
+    font-size: 13x;
+    border-radius: 40px;
+  }
+  .btn-vaciar{
+    font-size: 12px;
+  }
+
+}
+
 
 .btn-vaciar {
   background-color: #ff3d3d;

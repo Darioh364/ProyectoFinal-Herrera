@@ -47,7 +47,7 @@ function CheckOut() {
 
     return (
         <div className="checkout-container row">
-            <div className="col-6">
+            <div className="col-12 col-md-6">
                 <div className="carrito-container">
                     <h2 className="carrito-titulo">Resumen de la compra</h2>
                     <ul className="carrito-lista">
@@ -79,7 +79,7 @@ function CheckOut() {
                     <h3>Costo final ${costoTotalCompra} </h3>
                 </div>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
                 <h2>Datos para la compra</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">

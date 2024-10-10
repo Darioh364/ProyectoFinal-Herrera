@@ -35,11 +35,11 @@ function ItemDetail({ nombre, precio, categoria, descripcion, imagen, id, stock 
                     {nombre}
                 </h2>
             </header>
-            <div className='d-flex'>
-                <div>
+            <div className='d-flex row'>
+                <div className="col-12 col-md-4">
                     <img src={imagen} className="ImgCard" alt={nombre} />
                 </div>
-                <div>
+                <div className="col-12 col-md-8">
                     <section>
                         <p className="Info">
                             Precio: ${precio}

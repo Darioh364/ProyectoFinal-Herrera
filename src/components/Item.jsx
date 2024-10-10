@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function Item({ id, nombre, precio, imagen, categoria }) {
     
     return (
-        <article className="CardItem m-1">
+        <article className="CardItem col-12 col-md-4 ">
             <header className="Header">
                 <h2 className="ItemHeader">
                     {nombre}
