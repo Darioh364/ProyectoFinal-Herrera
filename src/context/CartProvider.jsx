@@ -31,12 +31,6 @@ function CartProvider({ children }) {
     // Función para vaciar el carrito
     const borrarCarrito = () => {
         setCart([]); // Esto vacía el carrito
-        Swal.fire({
-            icon: "success",
-            title: '¡Se vacio el carrito con exito!',
-            showConfirmButton: false,
-            timer: 1500
-        });
     };
 
     const eliminarItem = (itemAEliminar) => {

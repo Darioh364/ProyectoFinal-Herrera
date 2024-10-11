@@ -47,7 +47,7 @@ function CheckOut() {
 
     return (
         <div className="checkout-container row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6"> 
                 <div className="carrito-container">
                     <h2 className="carrito-titulo">Resumen de la compra</h2>
                     <ul className="carrito-lista">
@@ -56,7 +56,7 @@ function CheckOut() {
                             const cantidad = item.cantidad; // Cantidad del producto
                             const imagen = item.imagen;   // URL de la imagen del producto
                             const precio = item.precio;
-                            const id = item.id
+                            const id = item.id 
 
                             const costoDelProducto = cantidad * precio
                             costoTotalCompra = costoTotalCompra + costoDelProducto
@@ -64,7 +64,7 @@ function CheckOut() {
                             return (
                                 <li key={index} className="carrito-item">
                                     <Link to={`/item/${id}`}>
-                                        <img src={imagen} alt={producto} className="carrito-imagen" />
+                                    <img src={`/img/${imagen}`} alt={producto} className="carrito-imagen" />
                                     </Link>
                                     <div className="carrito-detalles">
                                         <span className="carrito-producto">{producto}</span>
