@@ -10,7 +10,7 @@ function Item({ id, nombre, precio, imagen, categoria }) {
                 </h2>
             </header>
             <div className="d-flex justify-content-center align-items-center">
-                <img src={imagen} alt="" className="ImgCard" />
+                <img src={`/img/${imagen}`} alt="" className="ImgCard" />
             </div>
             <section>
                 <p className="Info">

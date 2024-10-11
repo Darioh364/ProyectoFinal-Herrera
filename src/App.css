@@ -416,11 +416,11 @@ section {
 
 @media (max-width: 767px) {
   .btn-comprar {
-    font-size: 13x;
-    border-radius: 40px;
+    font-size: 15px;
   }
   .btn-vaciar{
-    font-size: 12px;
+    font-size: 15px;
+    width: 180px !important;
   }
 
 }
